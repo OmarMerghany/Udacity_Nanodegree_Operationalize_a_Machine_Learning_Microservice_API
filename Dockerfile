@@ -1,25 +1,23 @@
 FROM python:3.7.3-stretch
 
-
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
 ## Step 1:
-WORKDIR /opt
+# Create a working directory
+WORKDIR /app
 
 ## Step 2:
-COPY . /app
+# Copy source code to working directory
+COPY . app.py /app/
 
 ## Step 3:
-# RUN pip3 install -r /opt/app/requirements.txt
+# Install packages from requirements.txt
 # hadolint ignore=DL3013
-
 RUN pip install --upgrade pip &&\
-    pip install --trusted-host pypi.python.org -r /app/requirements.txt
+    pip install --trusted-host pypi.python.org -r requirements.txt
 
 ## Step 4:
+# Expose port 80
 EXPOSE 80
 
 ## Step 5:
 # Run app.py at container launch
-
-CMD [ "python3","/app/app.py" ]
+CMD ["python", "app.py"]
