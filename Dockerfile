@@ -13,7 +13,7 @@ COPY . /app
 # RUN pip3 install -r /opt/app/requirements.txt
 # hadolint ignore=DL3013
 
-RUN pip install --upgrade pip &&\
+RUN pip install --no-cache-dir --upgrade pip &&\
     pip install --trusted-host pypi.python.org -r /app/requirements.txt
 
 ## Step 4:
