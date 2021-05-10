@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![CircleCI](https://circleci.com/gh/OmarMerghany/Udacity_Nanodegree_Operationalize_a_Machine_Learning_Microservice_API.svg?style=svg)](https://circleci.com/gh/OmarMerghany/Udacity_Nanodegree_Operationalize_a_Machine_Learning_Microservice_API)
 
 ## Project Overview
 
